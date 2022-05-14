@@ -1,0 +1,22 @@
+trigger:
+  - master
+pool:
+  vmImage: ubuntu-latest
+stages:
+  - stage: Build
+    jobs:
+      - job: build_ubuntu
+        displayName: Build on Ubuntu vm
+        container: mercur3/fedora-latex-emacs:35-medium
+        steps:
+          - bash: |
+              sed -i "s/:e/ë/g" ./main.tex
+              sed -i "s/:E/Ë/g" ./main.tex
+              sed -i "s/:c/ç/g" ./main.tex
+              sed -i "s/:c/Ç/g" ./main.tex
+              pdflatex main.tex
+          - task: PublishBuildArtifacts@1
+            inputs:
+            pathToPublish: "."
+            artifactName: "main.pdf"
+
