@@ -72,8 +72,14 @@
   \subsection{Polinomi interpolues me diferenca t:e ndara}
   Duke z:evendesuar nga polinomi i Njutonit (\ref{Newton}) diferenca e ndara me
   ato t:e fundme t:e prapme marrim:
+  \begin{align}
+    P_n(x) &= f(x_n) + \nabla f(x_n)\frac{x - x_n}{h} + \nabla^2f(x_n)\frac{(x - x_n)(x - x_{n - 1})}{2 \cdot h!} \\
+    &+ \dots + \nabla^n f(x_n)\frac{(x - x_n)(x - x_{n - 1}) \dots (x - x_1)}{n! \cdot h^n}
+  \end{align}
+
+  Duke shkruar \(q = \frac{x - x_0}{h}\), marrim:
   \begin{equation}
-    P_n(x) = f(x_n) + \nabla f(x_n)\frac{x - x_n}{h} + \nabla^2f(x_n)\frac{(x - x_n)(x - x_{n - 1})}{2 \cdot h!} + \dots + \nabla^n f(x_n)\frac{(x - x_n)(x - x_{n - 1}) \dots (x - x_1)}{n! \cdot h^n}
+
   \end{equation}
 
 
