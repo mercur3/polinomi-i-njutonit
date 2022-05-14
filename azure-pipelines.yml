@@ -8,6 +8,7 @@ stages:
       - job: build_ubuntu
         displayName: Build on Ubuntu vm
         container: mercur3/fedora-latex-emacs:35-medium
+        timeoutInMinutes: 6
         steps:
           - bash: |
               sed -i "s/:e/ë/g" ./main.tex
