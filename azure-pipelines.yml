@@ -16,8 +16,8 @@ stages:
               sed -i "s/:c/ç/g" ./main.tex
               sed -i "s/:c/Ç/g" ./main.tex
               pdflatex -interaction nonstopmode -halt-on-error -file-line-error main.tex
-          - task: PublishBuildArtifacts@1
+          - task: DownloadBuildArtifacts@0
             inputs:
               pathToPublish: "./main.pdf"
               artifactName: "main.pdf"
-
+              downloadPath: "."
