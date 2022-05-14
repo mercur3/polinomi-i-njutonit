@@ -44,10 +44,12 @@
   Polinomi interpolues i Njutonit :esht:e nj:e metod:e p:er interpolimin e
   funksioneve t:e dh:en:e midis 2 pikave t:e caktuara. Ne form:en e p:ergjith:esuar ai
   shprehet si:
-  \begin{align}\label{Newton}
-    P(x) &= f(x_0) + (x - x_0)f[x_0, \ x_1] + \ \dots \ + (x - x_0)(x - x_1) \\
-    &+ \dots (x - x_{n - 1})f[x_0, \ x_1, \ \dots, \ x_n]
-  \end{align}
+  \begin{equation}
+  \begin{align*}\label{Newton}
+    P(x) &= f(x_0) + (x - x_0)f[x_0, \ x_1] + \ \dots \\
+    &+ (x - x_0)(x - x_1) \ \dots (x - x_{n - 1})f[x_0, \ x_1, \ \dots, \ x_n]
+  \end{align*}
+  \end{equation}
 
   P:er ta b:er:e formul:en me te qart:e mund ta shkruajm:e si:
   \[
@@ -56,7 +58,7 @@
 
   Dhe gabimi jepet nga formula:
   \[
-    E(x) = f[x_0, \ x_1, \ \dots, \ x_n]\prod_{i = 0}^n{(x - x_i)} \ \land \ f[x_0, \ x_1, \ \dots, \ x_n] = \frac{f^n(\zeta)}{n!}
+    E(x) = f[x_0, \ x_1, \ \dots, \ x_n]\prod_{i = 0}^n{(x - x_i)}
   \]
 
   \subsection{Diferencat e ndara}
