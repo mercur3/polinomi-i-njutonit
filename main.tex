@@ -7,6 +7,7 @@
 \usepackage{graphicx}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{asmmath}
 
 
 \renewcommand{\dateseparator}{.}
@@ -39,6 +40,38 @@
 \newpage
 
 \section{Hyrje}
+  \subsection{Polinomi interpolues i Njutonit}
+  Polinomi interpolues i Njutonit :esht:e nj:e metod:e p:er interpolimin e
+  funksioneve t:e dh:en:e midis 2 pikave t:e caktuara. Ne form:en e p:ergjith:esuar ai
+  shprehet si:
+  \begin{equation}\label{Newton}
+    P(x) = f(x_0) + (x - x_0)f[x_0, \ x_1] + \ \dots \ + (x - x_0)(x - x_1) \dots (x - x_{n - 1})f[x_0, \ x_1, \ \dots, \ x_n]
+  \begin{equation}
+
+  P:er ta b:er:e formul:en me te qart:e mund ta shkruajm:e si:
+  \[
+    P(x) &= f(x_0) + \sum_{i = 1}^{n}{\prod_{j = 0}^{i - 1}{(x - x_j)}f[x_0, \ \dots, \ x_i]} \\
+  \]
+
+  Dhe gabimi jepet nga formula:
+  \[
+    E(x) &= f[x_0, \ x_1, \ \dots, \ x_n]\prod_{i = 0}^n{(x - x_i)} \ \land \ f[x_0, \ x_1, \ \dots, \ x_n] = \frac{f^n(\zeta)}{n!}
+  \]
+
+  \subsection{Diferencat e ndara}
+  Supozojm:e se largesa midis pikave \(x_0, \ x_1, \ \dots, \ x_n\) :esht:e e
+  barabart:e. P:er rrjedhoj:e, mund te shkruajm:e:
+  \[
+    h = x_i - x_{i - i}, \ i = 1, \ 2, \ \dots, \ n
+  \]
+
+  Ne k:eto kushte diferenc:e e fundme e prapme e rendit t:e par:e quajm:e:
+  \(\nabla y_i = y_i - y_{i - 1}\), kurse diferenc:e t:e fundme t:e rendit \(n\):
+  \(\nabla^ny_i = \nabla(\nabla^{n - 1}y_i)\).
+
+  \subsection{Polinomi interpolues me diferenca t:e ndara}
+  Duke z:evendesuar nga polinomi i Njutonit (\ref{Newton}) diferenca e ndara me ato t:e fundme t:e prapme marrim:
+
 
 \section{Zbatime}
 
