@@ -17,6 +17,6 @@ stages:
               pdflatex main.tex
           - task: PublishBuildArtifacts@1
             inputs:
-            pathToPublish: "."
-            artifactName: "main.pdf"
+              pathToPublish: "."
+              artifactName: "main.pdf"
 
