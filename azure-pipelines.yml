@@ -11,13 +11,17 @@ stages:
         timeoutInMinutes: 6
         steps:
           - bash: |
+              echo "Replacing special characters"
               sed -i "s/:e/ë/g" ./main.tex
               sed -i "s/:E/Ë/g" ./main.tex
               sed -i "s/:c/ç/g" ./main.tex
               sed -i "s/:c/Ç/g" ./main.tex
+
+              echo "Compiling LaTeX"
+              pdflatex -interaction nonstopmode -halt-on-error -file-line-error main.tex
               pdflatex -interaction nonstopmode -halt-on-error -file-line-error main.tex
           - task: PublishBuildArtifacts@1
             inputs:
-              pathToPublish: "."
+              pathToPublish: ""
               artifactName: "main.pdf"
 
