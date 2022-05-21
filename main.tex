@@ -130,22 +130,22 @@
 
   Nga kjo marrim polinomin interpolues me:
   \begin{equation}
-    q = \frac{x - x_3}{h} = \frac{x - 40}{10}
+    q = \frac{x - x_3}{h} = \frac{x - 40}{10} = -2.9
   \end{equation}
 
   \begin{equation}
   \begin{aligned}
-    P_2(x) &= y_3 + x\nabla y_3 + \frac{q(q + 1)}{2}\nabla^2y_3 \\
+    P_2(11) &= y_3 + x\nabla y_3 + \frac{q(q + 1)}{2}\nabla^2y_3 \\
     &= 0.627 + \frac{0.109(x - 40)}{10} + \frac{-0.062 \cdot \frac{x - 40}{10} \cdot \frac{x - 30}{10}}{2} \\
-    &= \frac{-0.032x^2 + 3.33x - 19.3}{100} \\
+    &= 0.14009
   \end{aligned}
   \end{equation}
 
   Gabimi:
   \begin{equation}
   \begin{aligned}
-    E_2(x) &= \frac{q(q + 1)(q + 2)}{3!}\nabla^3y_3 \\
-    &= \frac{-x^3 + 90x^2 - 2600x + 24000}{100000}
+    E_2(11) &= \frac{q(q + 1)(q + 2)}{3!}\nabla^3y_3 \\
+    &= \frac{-2.9 \cdot (-1.9) \cdot (-0.9) \cdot (-0.06)}{3!} = 0.04959
   \end{aligned}
   \end{equation}
 
