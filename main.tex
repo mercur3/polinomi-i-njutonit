@@ -34,7 +34,6 @@
 }
 
 \begin{document}
-\maketitle
 \tableofcontents
 
 \newpage
@@ -92,10 +91,7 @@
 
   Gabimi i trungezimit nd:erkoh:e jepet nga:
   \begin{equation}
-  \begin{aligned}
-    E_n(x) &= h^{n + 1}q(q + 1) \cdots (q + n)\frac{f^{n + 1}(\zeta)}{(n + 1)!} \\
-    &\approx q(q + 1) \cdots (q + n)\frac{\nabla^{n + 1}f(x_n)}{(n + 1)!}
-  \end{aligned}
+    E_n(x) = q(q + 1) \cdots (q + n)\frac{\nabla^{n + 1}f(x_n)}{(n + 1)!}
   \end{equation}
 
   Polinomi interpolues me diferenca t:e prapme performon m:e mir:e n:e rastin
@@ -132,12 +128,17 @@
   \end{tabular}
   \end{table*}
 
-  Nga kjo marrim polinomin interpolues me \(q = (x - x_3)/h = (x - 40)/10\):
+  Nga kjo marrim polinomin interpolues me:
   \begin{equation*}
   \begin{aligned}
+    q &= (x - x_3)/h = (x - 40)/10 \\
+    \\
     P_2(x) &= y_3 + x\nabla y_3 + \frac{q(q + 1)}{2}\nabla^2y_3 \\
     &= 0.627 + \frac{0.109(x - 40)}{10} + \frac{-0.062 \cdot \frac{x - 40}{10} \cdot \frac{x - 30}{10}}{2} \\
-    &= \frac{-0.032x^2 + 3.33x - 19.3}{100}
+    &= \frac{-0.032x^2 + 3.33x - 19.3}{100} \\
+    \\
+    E_2(x) &= \frac{q(q + 1)(q + 2)}{3!}\nabla^3y_3 \\
+    &= \frac{-x^3 + 90x^2 - 2600x + 24000}{100000}
   \end{aligned}
   \end{equation*}
 
