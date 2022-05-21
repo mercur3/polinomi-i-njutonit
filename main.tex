@@ -20,7 +20,9 @@
   breaklines=true,
   showstringspaces=false,
   columns=flexible,
-  keepspaces=true
+  keepspaces=true,
+  commentstyle=\color{green},
+  keywordstyle=\color{blue}
 }
 
 \title{Polinomi interpolues i Njutonit me diferenca t:e prapme}
@@ -153,47 +155,46 @@
 
 \section{Algoritmi ne Octave}
   \begin{lstlisting}
-    function newton(vec_x, vec_y, x)
-      n = length(vec_x)
-      q = (x - vec_x(n)) / (vec_x(2) - vec_x(1))
-      diff_prapme = vec_y(1:n);
-      nabla = zeros(n - 1);
-      val = vec_y(n)
+  function newton(vec_x, vec_y, x)
+    n = length(vec_x)
+    q = (x - vec_x(n)) / (vec_x(2) - vec_x(1))
+    diff_prapme = vec_y(1:n);
+    nabla = zeros(n - 1);
+    val = vec_y(n)
   
-      for i = 1:n - 1
-        % llogarit diferencat e prapme
-        for j = n:-1:i+1
-          diff_prapme(j) -= diff_prapme(j - 1);
-        endfor
-        nabla(i) = diff_prapme(n);
-    
-        % printo diferencat e prapme
-        printf("Diferenca e rendit %d: ", i);
-        for j = i + 1:n
-          printf("%f ", diff_prapme(j));
-        endfor
-        printf("\nNabla %d: %f\n", i, nabla(i));
+    for i = 1:n - 1
+      % llogarit diferencat e prapme
+      for j = n:-1:i+1
+        diff_prapme(j) -= diff_prapme(j - 1);
       endfor
+      nabla(i) = diff_prapme(n);
   
-      % interpolimi
-      for i = 1:n - 2
-        num = q;
-        em = factorial(i);
-        for j = 1:i - 1
-          num *= (q + j);
-        endfor
+      % printo diferencat e prapme
+      printf("Diferenca e rendit %d: ", i);
+      for j = i + 1:n
+        printf("%f ", diff_prapme(j));
+      endfor
+      printf("\nNabla %d: %f\n", i, nabla(i));
+    endfor
+  
+    % interpolimi
+    for i = 1:n - 2
+      num = q;
+      em = factorial(i);
+      for j = 1:i - 1
+        num *= (q + j);
+      endfor
 
-        val += nabla(i) * num / em;
-      endfor
+      val += nabla(i) * num / em;
+    endfor
   
-      printf("Vlera = %f\n", val);
+    printf("Vlera = %f\n", val);
   
-      % skico grafikun
-      c = polyfit(vec_x, vec_y, n - 1);
-      z = [vec_x(1):(vec_x(n) - vec_x(1)) / 100:vec_x(n)];
-      p = polyval(c, z);
-      plot(z, p, vec_x, vec_y, 'o')
-    endfunction
+    c = polyfit(vec_x, vec_y, n - 1);
+    z = [vec_x(1):(vec_x(n) - vec_x(1)) / 100:vec_x(n)];
+    p = polyval(c, z);
+    plot(z, p, vec_x, vec_y, 'o')
+  endfunction
   \end{lstlisting}
   \newpage
 
